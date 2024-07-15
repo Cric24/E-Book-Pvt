@@ -1,0 +1,104 @@
+﻿/* Global styles */
+body {
+    font-family: 'Sitka Display', sans-serif;
+    color: #333;
+    background-image: url('pexels-lum3n-44775-167699.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(2px);
+        z-index: -1;
+    }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.container p {
+    color: #000; 
+    font-size: 1.3rem; /* Increased font size */
+}
+
+/* Search Form styles */
+.input-group {
+    position: relative;
+}
+
+.form-control {
+    border-radius: 15px;
+}
+
+.btn-primary {
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: purple;
+    }
+
+/* Card styles */
+.card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 14px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+}
+
+/* Button styles */
+.btn {
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+    .card:hover .card-img-top {
+        filter: grayscale(50%);
+    }
+
+/* Featured Books Section styles */
+#featuredBooksContainer {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: hidden;
+    position: relative;
+}

@@ -1,0 +1,191 @@
+﻿/* Global styles */
+body {
+    font-family: 'Sitka Display', sans-serif;
+    color: #333;
+    
+    background-image: url('pexels-eberhardgross-691668.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(#ffffff, #f0f0f0);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-top: 50px;
+    margin-bottom:20px;
+    text-align: center;
+    color: #007bff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    flex-direction: column;
+    
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    textarea:focus,
+    select:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+
+
+.alert {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Table styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+    /* Table header styles */
+    .table th {
+        padding: 15px;
+        text-align: left;
+        background-color: #007bff;
+        color: #fff;
+        border-bottom: 2px solid #fff; /* Added a bottom border to separate header */
+    }
+
+    /* Added gradient effect to table header */
+    .table th {
+        background: linear-gradient(180deg, #007bff, #0056b3);
+    }
+
+        /* Hover effect for table header */
+        .table th:hover {
+            background: linear-gradient(180deg, #0056b3, #003d80);
+        }
+
+
+
+/* Global button styles */
+.custom-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+    /* Add */
+    .custom-btn.btn-primary {
+        background-color:darkgreen;
+        border-color: #007bff;
+        color: #fff; /* White text */
+        padding: 7px 19px;
+        margin-top:-10px;
+        margin-bottom:20px;
+    }
+
+        .custom-btn.btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+        }
+
+    /* Delete */
+    .custom-btn.btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: #fff; /* White text */
+        padding: 7px 19px;
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+
+        .custom-btn.btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+            border-color: #c82333;
+        }
+
+    /* Search*/
+    .custom-btn.btn-secondary {
+        background-color: midnightblue;
+        border-color: #6c757d;
+        color: #fff; /* White text */
+        padding: 7px 19px;
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+
+        .custom-btn.btn-secondary:hover {
+            background-color: #5a6268; /* Darker grey on hover */
+            border-color: #5a6268;
+        }
+
+    /* Warning button styles */
+    .custom-btn.btn-warning {
+        background-color: rebeccapurple;
+        border-color: #ffc107;
+        color: aliceblue;
+        padding: 7px 19px;
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+
+        .custom-btn.btn-warning:hover {
+            background-color: #e0a800; /* Darker yellow on hover */
+            border-color: #e0a800;
+        }
+
+    /* Info button styles */
+    .custom-btn.btn-info {
+        background-color: #17a2b8; /* Cyan */
+        border-color: #17a2b8;
+        color: #fff; /* White text */
+    }
+
+        .custom-btn.btn-info:hover {
+            background-color: #138496; /* Darker cyan on hover */
+            border-color: #138496;
+        }

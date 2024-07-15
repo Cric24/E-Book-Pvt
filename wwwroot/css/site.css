@@ -1,0 +1,69 @@
+/* custom.css */
+
+/* Set base font size */
+html {
+    font-size: 14px;
+}
+
+/* Increase font size for larger screens */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Ensure that the body content is positioned correctly */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px; /* Ensure space for footer */
+}
+
+/* Style the header navigation bar */
+.navbar {
+    background-color: #f8f9fa; /* Light gray background */
+    border-bottom: 1px solid #dee2e6; /* Light border at the bottom */
+}
+
+.navbar-brand {
+    font-weight: bold; /* Make the brand text bold */
+}
+
+/* Style the search form */
+.search-form {
+    margin-bottom: 20px; /* Add space below the search form */
+}
+
+/* Style the card sections */
+.card {
+    margin-bottom: 20px; /* Add space below each card */
+}
+
+.card-header {
+    background-color: #007bff; /* Blue header background */
+    color: #fff; /* White header text */
+}
+
+.card-body ul {
+    list-style-type: none; /* Remove bullet points from list */
+    padding-left: 0; /* Remove default left padding */
+}
+
+    .card-body ul li {
+        margin-bottom: 10px; /* Add space between list items */
+    }
+
+/* Style the footer */
+.footer {
+    position: absolute; /* Position the footer at the bottom of the page */
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Set footer height */
+    line-height: 60px; /* Vertically center footer content */
+    background-color: #f8f9fa; /* Light gray background */
+    border-top: 1px solid #dee2e6; /* Light border at the top */
+    text-align: center; /* Center footer content */
+}

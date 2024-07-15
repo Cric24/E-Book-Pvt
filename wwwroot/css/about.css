@@ -1,0 +1,74 @@
+﻿/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('pexels-steve-858076.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+/* Heading styles */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem; /* Increase font size for better emphasis */
+    font-weight: bold; /* Added bold font weight for stronger visual impact */
+    color: #ffcd5c; /* Golden yellow color for heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added text shadow for depth */
+}
+
+/* Paragraph styles */
+p {
+    margin-bottom: 20px;
+    font-size: 1.2rem; /* Increased font size for better readability */
+    line-height: 1.6; /* Adjusted line height for improved spacing */
+    color: #ccc; /* Light gray color for paragraphs */
+}
+
+/* Social icons container */
+.social-icons {
+    margin-top: 30px;
+}
+
+    /* Social icon styles */
+    .social-icons a {
+        display: inline-block;
+        margin: 0 15px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 2rem; /* Increase font size for social icons */
+        transition: color 0.3s ease;
+    }
+
+        .social-icons a:hover {
+            color: #007bff; /* Changed color on hover to blue */
+        }
+
+/* Hover effect for container */
+.container:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+}

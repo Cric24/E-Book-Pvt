@@ -1,0 +1,178 @@
+﻿/* Global styles */
+body {
+    font-family: 'Sitka Display', sans-serif;
+    color: #f8f9fa; /* Light text color for contrast */
+    background-image: url('pexels-juanpphotoandvideo-1242348.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+        z-index: -1;
+    }
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px 20px;
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    background-color: rgb(13, 12, 12, 0.49);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    flex-grow: 1;
+    overflow: auto; /* Ensure container is scrollable if content overflows */
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f8f9fa;
+}
+
+/* Card styles */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    display: inline-block;
+    vertical-align: top;
+    width: calc(45% - 40px); /* Adjusted width to accommodate margins */
+    color: #f8f9fa;
+    position: relative;
+    z-index: 1;
+}
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+    color: #f8f9fa;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    background-image: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    .btn:hover {
+        background-image: linear-gradient(135deg, #0056b3, #007bff);
+        transform: scale(1.05);
+    }
+
+    .btn:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        margin-bottom: 15px;
+        width: calc(100% - 40px); /* Single card per row */
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.875rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Additional styles for a more modern look */
+.card:hover .card-title {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover .card-text {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-content p {
+    line-height: 1.5;
+    margin: 0 0 1rem;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #f8f9fa;
+    text-align: center;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+    footer a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
