@@ -1,0 +1,405 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BookStore.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BookStore.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Aeneid.jpg",
+      "PackagePath": "staticwebassets\\css\\Aeneid.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Cusdash.css",
+      "PackagePath": "staticwebassets\\css\\Cusdash.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Feedback.css",
+      "PackagePath": "staticwebassets\\css\\Feedback.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Frankentein.jpg",
+      "PackagePath": "staticwebassets\\css\\Frankentein.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\GOT.jpg",
+      "PackagePath": "staticwebassets\\css\\GOT.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Ghost Station.jpg",
+      "PackagePath": "staticwebassets\\css\\Ghost Station.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\HOTD.jpg",
+      "PackagePath": "staticwebassets\\css\\HOTD.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Hamlet.jpg",
+      "PackagePath": "staticwebassets\\css\\Hamlet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Index.css",
+      "PackagePath": "staticwebassets\\css\\Index.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Odyssey.jpg",
+      "PackagePath": "staticwebassets\\css\\Odyssey.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Password.css",
+      "PackagePath": "staticwebassets\\css\\Password.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Poltergeist.jpg",
+      "PackagePath": "staticwebassets\\css\\Poltergeist.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Register.css",
+      "PackagePath": "staticwebassets\\css\\Register.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\Table for Two.jpg",
+      "PackagePath": "staticwebassets\\css\\Table for Two.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\The Amityville Horror.jpg",
+      "PackagePath": "staticwebassets\\css\\The Amityville Horror.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\The Howling.jpg",
+      "PackagePath": "staticwebassets\\css\\The Howling.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\The Iliad.jpg",
+      "PackagePath": "staticwebassets\\css\\The Iliad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\The Omen.jpg",
+      "PackagePath": "staticwebassets\\css\\The Omen.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\The Oresteia.jpg",
+      "PackagePath": "staticwebassets\\css\\The Oresteia.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\about.css",
+      "PackagePath": "staticwebassets\\css\\about.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\addash.css",
+      "PackagePath": "staticwebassets\\css\\addash.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\auth.css",
+      "PackagePath": "staticwebassets\\css\\auth.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\book.css",
+      "PackagePath": "staticwebassets\\css\\book.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\customer.css",
+      "PackagePath": "staticwebassets\\css\\customer.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\kelly-sikkema-tk9RQCq5eQo-unsplash.jpg",
+      "PackagePath": "staticwebassets\\css\\kelly-sikkema-tk9RQCq5eQo-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\order.css",
+      "PackagePath": "staticwebassets\\css\\order.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\pexels-eberhardgross-691668.jpg",
+      "PackagePath": "staticwebassets\\css\\pexels-eberhardgross-691668.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\pexels-gabriela-palai-129458-395198.jpg",
+      "PackagePath": "staticwebassets\\css\\pexels-gabriela-palai-129458-395198.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\pexels-juanpphotoandvideo-1242348.jpg",
+      "PackagePath": "staticwebassets\\css\\pexels-juanpphotoandvideo-1242348.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\pexels-karolina-grabowska-4194842.jpg",
+      "PackagePath": "staticwebassets\\css\\pexels-karolina-grabowska-4194842.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\pexels-lum3n-44775-167699.jpg",
+      "PackagePath": "staticwebassets\\css\\pexels-lum3n-44775-167699.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\pexels-minan1398-683402.jpg",
+      "PackagePath": "staticwebassets\\css\\pexels-minan1398-683402.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\pexels-pixabay-268883.jpg",
+      "PackagePath": "staticwebassets\\css\\pexels-pixabay-268883.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\pexels-pixelcop-2680270.jpg",
+      "PackagePath": "staticwebassets\\css\\pexels-pixelcop-2680270.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\pexels-steve-858076.jpg",
+      "PackagePath": "staticwebassets\\css\\pexels-steve-858076.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ext\\Documents\\Visual Studio 2022\\BookStore\\BookStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.BookStore.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.BookStore.props",
+      "PackagePath": "build\\BookStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.BookStore.props",
+      "PackagePath": "buildMultiTargeting\\BookStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.BookStore.props",
+      "PackagePath": "buildTransitive\\BookStore.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

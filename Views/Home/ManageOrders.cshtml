@@ -1,0 +1,375 @@
+﻿@{
+    ViewData["Title"] = "Manage Orders";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="/css/order.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Manage Orders</h1>
+
+
+
+        <button id="toggleTableButton" class="btn btn-secondary custom-btn">Show/Hide Table</button>
+
+        <div id="bookTableContainer" style="display: none;">
+            <table id="bookTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Book ID</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>ISBN</th>
+                        <th>Year</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Categories</th>
+                    </tr>
+                </thead>
+                <tbody id="bookTableBody">
+                    <!-- Data will be loaded here -->
+                </tbody>
+
+            </table>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var toggleTableButton = document.getElementById("toggleTableButton");
+                var bookTableContainer = document.getElementById("bookTableContainer");
+                var bookTableBody = document.getElementById("bookTableBody");
+
+                toggleTableButton.addEventListener("click", function () {
+                    if (bookTableContainer.style.display === "none") {
+                        bookTableContainer.style.display = "block";
+                        loadData(); // Call function to load data into the table
+                    } else {
+                        bookTableContainer.style.display = "none";
+                    }
+                });
+
+                function loadData() {
+                    // Fetch data from server
+                    fetch("/Book/GetBooks")
+                        .then(response => response.json())
+                        .then(data => {
+                            // Clear existing table rows
+                            bookTableBody.innerHTML = "";
+
+                            // Populate table with fetched data
+                            data.forEach(book => {
+                                var row = document.createElement("tr");
+                                row.innerHTML = `
+                                                <td>${book.id}</td>
+                                                <td>${book.title}</td>
+                                                <td>${book.author}</td>
+                                                <td>${book.isbn}</td>
+                                                <td>${book.year}</td>
+                                                <td>${book.price}</td>
+                                                <td>${book.quantity}</td>
+                                             
+                                                <td>${book.categories}</td>
+                                            `;
+                                bookTableBody.appendChild(row);
+                            });
+                        })
+                        .catch(error => console.error('Error fetching data:', error));
+                }
+            });
+
+        </script>
+
+
+        <!-- Order form -->
+        <form method="post" action="/Order/AddOrder">
+
+            <div class="form-group">
+                <label for="bookTitle">Book Title:</label>
+                <input type="text" class="form-control" id="bookTitle" name="bookTitle" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customerId">Customer ID:</label>
+                <input type="number" class="form-control" id="customerId" name="customerId" required>
+            </div>
+            <div class="form-group">
+                <label for="orderDate">Order Date:</label>
+                <input type="date" class="form-control" id="orderDate" name="orderDate" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" class="form-control" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="unitPrice">Unit Price:</label>
+                <input type="number" class="form-control" id="unitPrice" name="unitPrice" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select class="form-control" id="status" name="status" required>
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                   
+                </select>
+            </div>
+            <button type="submit" class="btn custom-btn btn-primary">Add Order</button>
+        </form>
+
+        <!-- Display success or error messages -->
+        @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+        {
+            <div class="alert alert-success" role="alert">
+                @ViewBag.SuccessMessage
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+
+
+
+        <form method="post" action="/Order/DeleteOrder">
+            <div class="form-group">
+                <label for="orderId">Order ID:</label>
+                <input type="number" class="form-control" id="orderId" name="orderId" required>
+            </div>
+            <button type="submit" class="btn custom-btn btn-danger">Delete Order</button>
+        </form>
+
+
+
+        <!-- Search Customer -->
+
+        <form method="post" action="/Customer/SearchCustomer">
+            <div class="form-group">
+                <label for="searchId">Search Customer by ID:</label>
+                <input type="number" class="form-control" id="searchId" name="searchId">
+            </div>
+            <div class="form-group">
+                <label for="searchName">Search Customer by Name:</label>
+                <input type="text" class="form-control" id="searchName" name="searchName">
+            </div>
+            <button type="submit" class="btn custom-btn btn-secondary">Search</button>
+        </form>
+
+        @if (!string.IsNullOrEmpty(ViewBag.CustomerId) && !string.IsNullOrEmpty(ViewBag.CustomerName))
+        {
+            <div>
+                <p>Customer ID: @ViewBag.CustomerId</p>
+                <p>Customer Name: @ViewBag.CustomerName</p>
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(ViewBag.SearchErrorMessage))
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.SearchErrorMessage
+            </div>
+        }
+
+
+
+        <button id="toggleCustomerTableButton" class="btn custom-btn btn-primary">Show/Hide Customers</button>
+
+        <div id="customerTableContainer" style="display: none;">
+            <table id="customerTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody id="customerTableBody">
+                    <!-- Data will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var toggleCustomerTableButton = document.getElementById("toggleCustomerTableButton");
+                var customerTableContainer = document.getElementById("customerTableContainer");
+                var customerTableBody = document.getElementById("customerTableBody");
+
+                toggleCustomerTableButton.addEventListener("click", function () {
+                    if (customerTableContainer.style.display === "none") {
+                        customerTableContainer.style.display = "block";
+                        loadCustomerData(); // Call function to load customer data into the table
+                    } else {
+                        customerTableContainer.style.display = "none";
+                    }
+                });
+
+                function loadCustomerData() {
+                    // Fetch data from server
+                    fetch("/Customer/GetCustomerNames")
+                        .then(response => response.json())
+                        .then(data => {
+                            // Clear existing table rows
+                            customerTableBody.innerHTML = "";
+
+                            // Populate table with fetched data
+                            data.forEach(customer => {
+                                var row = document.createElement("tr");
+                                row.innerHTML = `
+                                        <td>${customer.id}</td>
+                                        <td>${customer.name}</td>
+                                    `;
+                                customerTableBody.appendChild(row);
+                            });
+                        })
+                        .catch(error => console.error('Error fetching data:', error));
+                }
+            });
+        </script>
+
+
+
+
+        <!-- Update order form -->
+        <form method="post" action="/Order/UpdateOrder">
+
+            
+
+            <div class="form-group">
+                <label for="updateOrderId">Order ID:</label>
+                <input type="number" class="form-control" id="updateOrderId" name="updateOrderId" required>
+            </div>
+
+            <div class="form-group">
+                <label for="updateBookTitle">Book Title:</label>
+                <input type="text" class="form-control" id="updateBookTitle" name="updateBookTitle">
+            </div>
+
+            <div class="form-group">
+                <label for="updateCustomerId">Customer ID:</label>
+                <input type="number" class="form-control" id="updateCustomerId" name="updateCustomerId" >
+            </div>
+            <div class="form-group">
+                <label for="updateOrderDate">Order Date:</label>
+                <input type="date" class="form-control" id="updateOrderDate" name="updateOrderDate">
+            </div>
+            <div class="form-group">
+                <label for="updateQuantity">Quantity:</label>
+                <input type="number" class="form-control" id="updateQuantity" name="updateQuantity">
+            </div>
+            <div class="form-group">
+                <label for="updateUnitPrice">Unit Price:</label>
+                <input type="number" class="form-control" id="updateUnitPrice" name="updateUnitPrice">
+            </div>
+            <div class="form-group">
+                <label for="updateStatus">Status:</label>
+                <select class="form-control" id="updateStatus" name="updateStatus" required>
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                  
+                </select>
+            </div>
+            <button type="submit" class="btn custom-btn btn-warning">Update Order</button>
+
+            @if (!string.IsNullOrEmpty(ViewBag.UpdateSuccessMessage))
+            {
+                <div class="alert alert-success" role="alert">
+                    @ViewBag.UpdateSuccessMessage
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(ViewBag.UpdateErrorMessage))
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.UpdateErrorMessage
+                </div>
+            }
+
+        </form>
+
+
+
+        <button id="toggleOrderTableButton" class="btn custom-btn btn-info">Show/Hide Orders</button>
+
+        <div id="orderTableContainer" style="display: none;">
+            <table id="orderTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Book Title</th>
+                        <th>Customer ID</th>
+                        <th>Order Date</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="orderTableBody">
+                    <!-- Data will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var toggleOrderTableButton = document.getElementById("toggleOrderTableButton");
+                var orderTableContainer = document.getElementById("orderTableContainer");
+                var orderTableBody = document.getElementById("orderTableBody");
+
+                toggleOrderTableButton.addEventListener("click", function () {
+                    if (orderTableContainer.style.display === "none") {
+                        orderTableContainer.style.display = "block";
+                        loadOrderData(); // Call function to load order data into the table
+                    } else {
+                        orderTableContainer.style.display = "none";
+                    }
+                });
+
+                function loadOrderData() {
+                    // Fetch data from server
+                    fetch("/Order/GetOrders")
+                        .then(response => response.json())
+                        .then(data => {
+                            // Clear existing table rows
+                            orderTableBody.innerHTML = "";
+
+                            // Populate table with fetched data
+                            data.forEach(order => {
+                                var row = document.createElement("tr");
+                                row.innerHTML = `
+                                        <td>${order.id}</td>
+                                        <td>${order.bookTitle}</td>
+                                        <td>${order.customerId}</td>
+                                        <td>${order.orderDate}</td>
+                                        <td>${order.quantity}</td>
+                                        <td>${order.unitPrice}</td>
+                                        <td>${order.totalAmount}</td>
+                                        <td>${order.status}</td>
+                                    `;
+                                orderTableBody.appendChild(row);
+                            });
+                        })
+                        .catch(error => console.error('Error fetching data:', error));
+                }
+            });
+        </script>
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>

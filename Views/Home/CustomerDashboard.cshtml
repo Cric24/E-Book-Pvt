@@ -1,0 +1,501 @@
+﻿@model BookStore.Models.Customer
+
+@{
+    ViewData["Title"] = "Customer Dashboard";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the Customer Dashboard</title>
+    <link rel="stylesheet" href="~/css/Cusdash.css?v=1.0.0">
+   
+</head>
+<body>
+    <div>
+        <h1>Welcome to the Customer Dashboard, @ViewData["CustomerName"]!</h1>
+        <p>CustomerID: @ViewData["CustomerId"]</p>
+
+        <h2>My Orders</h2>
+       <button id="toggleOrderTableButton" class="btn btn-secondary toggle-order-table">Show/Hide Orders</button>
+        
+
+       
+        <div id="orderTableContainer" style="display: none;">
+            <h2>Delete Order</h2>
+            <form id="deleteOrderForm">
+                <label for="orderId">Order ID:</label>
+                <input type="text" id="orderId" name="orderId">
+                <button type="submit" class="btn btn-danger delete-order">Delete</button>
+                <p id="deleteOrderStatus"></p>
+            </form>
+            <table id="orderTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Book Title</th>
+                        <th>Customer ID</th>
+                        <th>Order Date</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="orderTableBody">
+                    <!-- Data will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h2>My Cart</h2>
+            <button id="toggleCartTableButton" class="btn btn-secondary toggle-cart-table">Show/Hide Cart</button>
+            <div id="cartTableContainer" style="display: none;">
+                <table id="cartTable" class="table">
+                    
+                    <tbody id="cartTableBody">
+                        <!-- Cart items will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        <div>
+            <h2>Available Books</h2>
+            <button id="toggleBookTableButton" class="btn btn-secondary toggle-book-table">Show/Hide Books</button>
+            <div id="bookTableContainer" style="display: none;">
+                
+                <!-- Search Form -->
+                <div class="row mb-3">
+                    <div class="col-md-6 offset-md-3">
+                        <form id="searchBooksForm">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for books..." id="searchBooksInput">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                                <
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <table id="bookTable" class="table">
+                    
+
+                    <tbody id="bookTableBody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var toggleOrderTableButton = document.getElementById("toggleOrderTableButton");
+            var orderTableContainer = document.getElementById("orderTableContainer");
+            var orderTableBody = document.getElementById("orderTableBody");
+
+            toggleOrderTableButton.addEventListener("click", function () {
+                if (orderTableContainer.style.display === "none") {
+                    orderTableContainer.style.display = "block";
+                    loadOrderData(); // Call function to load order data into the table
+                } else {
+                    orderTableContainer.style.display = "none";
+                }
+            });
+
+            var toggleCartTableButton = document.getElementById("toggleCartTableButton");
+            var cartTableContainer = document.getElementById("cartTableContainer");
+
+            toggleCartTableButton.addEventListener("click", function () {
+                if (cartTableContainer.style.display === "none") {
+                    cartTableContainer.style.display = "block";
+                    loadCartData(); // Call function to load cart data into the table
+                } else {
+                    cartTableContainer.style.display = "none";
+                }
+            });
+
+
+            var toggleBookTableButton = document.getElementById("toggleBookTableButton");
+            var bookTableContainer = document.getElementById("bookTableContainer");
+            var bookTableBody = document.getElementById("bookTableBody");
+
+            toggleBookTableButton.addEventListener("click", function () {
+                if (bookTableContainer.style.display === "none") {
+                    bookTableContainer.style.display = "block";
+                    loadBookData(); // Call function to load book data into the table
+                } else {
+                    bookTableContainer.style.display = "none";
+                }
+            });
+
+
+            
+
+                var deleteOrderForm = document.getElementById("deleteOrderForm");
+                var deleteOrderStatus = document.getElementById("deleteOrderStatus");
+
+                deleteOrderForm.addEventListener("submit", function (event) {
+                    event.preventDefault(); // Prevent default form submission behavior
+
+                    var orderId = document.getElementById("orderId").value;
+
+                    // Send a request to delete the order
+                    fetch(`/Customer/DeleteOrder?orderId=${orderId}`, {
+                        method: "DELETE"
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                // Order deleted successfully
+                                deleteOrderStatus.innerText = "Order deleted successfully!";
+                                deleteOrderStatus.classList.remove("text-danger");
+                                deleteOrderStatus.classList.add("text-success");
+
+                                
+                                loadOrderData();
+                            } else {
+                                // Failed to delete order
+                                deleteOrderStatus.innerText = "Failed to delete order.";
+                                deleteOrderStatus.classList.remove("text-success");
+                                deleteOrderStatus.classList.add("text-danger");
+                            }
+                        })
+                        .catch(error => {
+                            // Error occurred
+                            console.error('Error deleting order:', error);
+                            deleteOrderStatus.innerText = "An error occurred while deleting order.";
+                            deleteOrderStatus.classList.remove("text-success");
+                            deleteOrderStatus.classList.add("text-danger");
+                        });
+                });
+
+               
+           
+
+                         
+
+
+            function loadOrderData() {
+                // Retrieve customer ID from ViewData
+                var customerId = @Html.Raw(Json.Serialize(ViewData["CustomerId"]));
+
+                // Fetch data from server
+                fetch(`/Customer/GetCustomerOrders?customerId=${customerId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Clear existing table rows
+                        orderTableBody.innerHTML = "";
+
+                        // Populate table with fetched data
+                        data.forEach(order => {
+                            var row = document.createElement("tr");
+                            row.innerHTML = `
+                                        <td>${order.id}</td>
+                                        <td>${order.bookTitle}</td>
+                                        <td>${order.customerId}</td>
+                                        <td>${order.orderDate}</td>
+                                        <td>${order.quantity}</td>
+                                        <td>${order.unitPrice}</td>
+                                        <td>${order.totalAmount}</td>
+                                        <td>${order.status}</td>
+                                                
+                                     
+                                    `;
+                            orderTableBody.appendChild(row);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            }
+
+
+            
+            function loadCartData() {
+                // Retrieve customer ID from ViewData
+                var customerId = @Html.Raw(Json.Serialize(ViewData["CustomerId"]));
+
+                // Fetch cart data from server
+                fetch(`/Customer/GetCustomerCart?customerId=${customerId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        var cartContainer = document.getElementById("cartTableBody");
+                        cartContainer.innerHTML = ""; // Clear existing content
+
+                        // Populate container with fetched data
+                        data.forEach(cartItem => {
+                            var cartItemDiv = document.createElement("div");
+                            cartItemDiv.classList.add("cart-item");
+
+                            var cartItemDetails = document.createElement("p");
+                            cartItemDetails.style.marginBottom = "20px";
+                            cartItemDetails.innerHTML = `
+                            <strong>Book Title:</strong> ${cartItem.bookTitle}<br>
+                            <strong>Quantity:</strong> ${cartItem.quantity}<br>
+                            <strong>Unit Price:</strong> ${cartItem.unitPrice}<br>
+                            <strong>Total Amount:</strong> ${cartItem.totalAmount}<br><br>
+                        `;
+
+                            var addToOrdersButton = document.createElement("button");
+                            addToOrdersButton.textContent = "Add to Orders";
+                            addToOrdersButton.classList.add("btn", "btn-primary");
+                            addToOrdersButton.style.marginRight = "10px";
+                            addToOrdersButton.style.color = "black";
+                            addToOrdersButton.addEventListener("click", function () {
+                                // Call a function to add the cart item to the orders
+                                addToOrders(cartItem);
+                            });
+
+
+                         
+                            var deleteButton = document.createElement("button");
+                            deleteButton.textContent = "Delete";
+                            deleteButton.classList.add("btn", "btn-danger");
+                            deleteButton.style.color = "black";
+                            deleteButton.addEventListener("click", function () {
+                                // Call a function to delete the cart item
+                                deleteCartItem(cartItem.cartItemId);
+                            });
+
+
+                            cartItemDiv.appendChild(cartItemDetails);
+                            cartItemDiv.appendChild(addToOrdersButton);
+                            cartContainer.appendChild(cartItemDiv);
+                            cartItemDiv.appendChild(deleteButton);
+                        });
+
+                        // Show cart container
+                        cartTableContainer.style.display = "block";
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            }
+
+
+            
+                    
+
+
+
+
+
+
+            function addToOrders(cartItem) {
+                // Retrieve customer ID from ViewData
+                var customerId = @Html.Raw(Json.Serialize(ViewData["CustomerId"]));
+
+                // Send a request to the server to add the cart item to the orders
+                fetch(`/Customer/AddToOrders?customerId=${customerId}&cartItemId=${cartItem.cartItemId}`, {
+                    method: "POST"
+                })
+                    .then(response => {
+                        if (response.ok) {
+
+
+                            // Remove the cart item from the cart table
+                            var cartItemDiv = document.getElementById(`cartItem_${cartItem.cartItemId}`);
+                            cartItemDiv.remove();
+
+
+                            
+
+                        } else {
+                            alert("Failed to add cart item to orders.");
+                        }
+                    })
+                    .catch(error => console.error('Error adding cart item to orders:', error));
+            }
+
+
+            function deleteCartItem(cartItemId) {
+                fetch(`/Customer/DeleteCartItem?cartItemId=${cartItemId}`, {
+                    method: "DELETE"
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            // Remove the cart item from the UI
+                            var cartItemDiv = document.getElementById(`cartItem_${cartItemId}`);
+                            cartItemDiv.remove();
+
+                            
+
+                            
+
+                        } else {
+                            console.error("Failed to delete cart item.");
+                        }
+                    })
+                    .catch(error => console.error("Error deleting cart item:", error));
+            }
+
+
+
+            // Search form and input elements
+            var searchBooksForm = document.getElementById("searchBooksForm");
+            var searchBooksInput = document.getElementById("searchBooksInput");
+
+            // Add event listener to the search form
+            searchBooksForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission behavior
+
+                var searchQuery = searchBooksInput.value.trim();
+
+                // Call function to search for books
+                searchBooks(searchQuery);
+            });
+
+           
+            // Function to search for books
+            function searchBooks(query) {
+                // Fetch data from server based on search query
+                fetch(`/Customer/SearchBooks?title=${encodeURIComponent(query)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        var bookTableBody = document.getElementById("bookTableBody");
+                        bookTableBody.innerHTML = ""; // Clear existing content
+
+                        if (data.length === 0) {
+                            bookTableBody.innerHTML = "<tr><td colspan='2'>No results found.</td></tr>";
+                            return;
+                        }
+
+                        // Populate container with fetched data
+                        data.forEach(book => {
+                            for (const property in book) {
+                                if (book.hasOwnProperty(property)) {
+                                    var row = document.createElement("tr");
+                                    row.innerHTML = `
+                                    <th>${property}</th>
+                                    <td>${book[property]}</td>
+                                `;
+                                    bookTableBody.appendChild(row);
+                                }
+                            }
+                        });
+
+                        // Clear the search input textbox
+                        document.getElementById("searchBooksInput").value = "";
+                       
+                    })
+                    .catch(error => console.error('Error fetching search results:', error));
+            }
+
+
+
+
+
+
+
+            function loadBookData() {
+                // Fetch data from server
+                fetch("/Customer/GetAvailableBooks")
+                    .then(response => response.json())
+                    .then(data => {
+                        // Clear existing content
+                        bookTableBody.innerHTML = "";
+
+                        // Populate container with fetched data
+                        data.forEach(book => {
+                            var bookDiv = document.createElement("div");
+                            bookDiv.id = `book_${book.id}`;
+                            bookDiv.classList.add("book-item");
+
+                            var bookDetailParagraph = document.createElement("p");
+                            bookDetailParagraph.style.marginBottom = "40px";
+                            bookDetailParagraph.innerHTML = `Book ID: ${book.id}<br>
+                                                                    Title: ${book.title}<br>
+                                                                    Author: ${book.author}<br>
+                                                                    ISBN: ${book.isbn}<br>
+                                                                    Year: ${book.year}<br>
+                                                                    Price: ${book.price}<br>
+                                                                    Quantity: ${book.quantity}<br>
+                                                                    Description: ${book.description}<br>
+                                                                    Categories: ${book.categories}`;
+
+
+                            var quantityInput = document.createElement("input");
+                            quantityInput.type = "number";
+                            quantityInput.min = 1;
+                            quantityInput.max = book.quantity;
+                            quantityInput.value = 1;
+                                                                    
+                                                                    
+                            var addToCartButton = document.createElement("button");
+                            addToCartButton.textContent = "Add to Cart";
+                            addToCartButton.classList.add("btn", "btn-primary");
+                            addToCartButton.style.color = "black";
+                            addToCartButton.addEventListener("click", function () {
+                                // Call a function to add the book to the cart
+                                addToCart(book.id, quantityInput.value);
+                            });
+
+                            bookDiv.appendChild(bookDetailParagraph);
+                            bookDiv.appendChild(quantityInput);
+                            bookDiv.appendChild(addToCartButton);
+
+                            bookTableBody.appendChild(bookDiv);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            }
+
+            function addToCart(bookId, quantity) {
+                // Retrieve customer ID from ViewData
+                var customerId = @Html.Raw(Json.Serialize(ViewData["CustomerId"]));
+
+                // Send a request to the server to add the book to the cart
+                fetch(`/Customer/AddToCart?customerId=${customerId}&bookId=${bookId}&quantity=${quantity}`, {
+                    method: "POST"
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            // Find the book item container
+                            var bookItemContainer = document.getElementById(`book_${bookId}`);
+                            // Create a success message element
+                            var successMessage = document.createElement("p");
+                            successMessage.textContent = "Added to cart successfully!";
+                            successMessage.classList.add("text-success");
+                            // Append the success message to the book item container
+                            bookItemContainer.appendChild(successMessage);
+                        } else {
+                            return response.text().then(errorMessage => {
+                                throw new Error(errorMessage); // Throw an error with the error message from the server
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error adding book to cart:', error.message);
+                        // Find the book item container
+                        var bookItemContainer = document.getElementById(`book_${bookId}`);
+                        // Create a failure message element
+                        var failureMessage = document.createElement("p");
+                        failureMessage.textContent = "Failed to add book to cart: " + error.message;
+                        failureMessage.classList.add("text-danger");
+                        // Append the failure message directly under the "Add to Cart" button
+                        bookItemContainer.parentNode.insertBefore(failureMessage, bookItemContainer.nextSibling);
+                    });
+            }
+
+
+            
+
+
+
+
+        });
+    </script>
+</body>
+</html>

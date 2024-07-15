@@ -1,0 +1,217 @@
+﻿
+
+
+@{
+    ViewData["Title"] = "Manage Customers";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+
+   
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="/css/customer.css?v=1.0.0">
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Manage Customers</h1>
+        <!-- Form for adding a new customer -->
+        <form method="post" action="/Customer/AddCustomer">
+          
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address" name="address" required />
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required />
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary add-customer-btn">Add Customer</button>
+
+            <!-- Success message -->
+            @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+            {
+                <div class="alert alert-success" role="alert">
+                    @ViewBag.SuccessMessage
+                </div>
+            }
+            <!-- Error message -->
+            @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
+        </form>
+
+
+        <!-- Form for deleting a customer -->
+        <form method="post" action="/Customer/DeleteCustomer">
+            <div class="form-group">
+                <label for="deleteCustomerId">Enter Customer ID to Delete:</label>
+                <input type="number" class="form-control" id="deleteCustomerId" name="id" required />
+            </div>
+            <button type="submit" class="btn btn-danger delete-customer-btn">Delete Customer</button>
+
+            <!-- Success message -->
+            @if (!string.IsNullOrEmpty(ViewBag.DeleteSuccessMessage))
+            {
+                <div class="alert alert-success" role="alert">
+                    @ViewBag.DeleteSuccessMessage
+                </div>
+            }
+            <!-- Error message -->
+            @if (!string.IsNullOrEmpty(ViewBag.DeleteErrorMessage))
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.DeleteErrorMessage
+                </div>
+            }
+        </form>
+
+
+        <!-- Form for updating a customer -->
+        <form id="updateCustomerForm" method="post" action="/Customer/UpdateCustomer">
+            <div class="form-group">
+                <label for="updateCustomerId">Enter Customer ID to Update:</label>
+                <input type="number" class="form-control" id="updateCustomerId" name="id" required />
+            </div>
+            <div class="form-group">
+                <label for="updateCustomerName">Name:</label>
+                <input type="text" class="form-control" id="updateCustomerName" name="name" />
+            </div>
+            <div class="form-group">
+                <label for="updateCustomerEmail">Email:</label>
+                <input type="email" class="form-control" id="updateCustomerEmail" name="email" />
+            </div>
+            <div class="form-group">
+                <label for="updateCustomerAddress">Address:</label>
+                <input type="text" class="form-control" id="updateCustomerAddress" name="address" />
+            </div>
+            <div class="form-group">
+                <label for="updateCustomerPhoneNumber">Phone Number:</label>
+                <input type="text" class="form-control" id="updateCustomerPhoneNumber" name="phoneNumber" />
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-warning update-customer-btn">Update Customer</button>
+            <!-- Success and error messages for update action -->
+          
+            @if (!string.IsNullOrEmpty(ViewBag.UpdateSuccessMessage))
+            {
+                <div class="alert alert-success" role="alert">
+                    @ViewBag.UpdateSuccessMessage
+                </div>
+            }
+            <!-- Error messages for update action -->
+            @if (!string.IsNullOrEmpty(ViewBag.UpdateErrorMessage))
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.UpdateErrorMessage
+                </div>
+            }
+        </form>
+
+
+
+        <button id="toggleTableButton" class="btn btn-secondary">Show/Hide Customers</button>
+
+        <div id="customerTableContainer" style="display: none;">
+            <table id="customerTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody id="customerTableBody">
+                    <!-- Data will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var toggleTableButton = document.getElementById("toggleTableButton");
+                var customerTableContainer = document.getElementById("customerTableContainer");
+                var customerTableBody = document.getElementById("customerTableBody");
+
+                toggleTableButton.addEventListener("click", function () {
+                    if (customerTableContainer.style.display === "none") {
+                        customerTableContainer.style.display = "block";
+                        loadCustomerData(); // Call function to load customer data into the table
+                    } else {
+                        customerTableContainer.style.display = "none";
+                    }
+                });
+
+                function loadCustomerData() {
+                    // Fetch data from server
+                    fetch("/Customer/GetCustomers")
+                        .then(response => response.json())
+                        .then(data => {
+                            // Clear existing table rows
+                            customerTableBody.innerHTML = "";
+
+                            // Populate table with fetched data
+                            data.forEach(customer => {
+                                var row = document.createElement("tr");
+                                row.innerHTML = `
+                                        <td>${customer.id}</td>
+                                        <td>${customer.name}</td>
+                                        <td>${customer.email}</td>
+                                        <td>${customer.address}</td>
+                                        <td>${customer.phoneNumber}</td>
+                                        <td>${customer.gender}</td>
+                                    `;
+                                customerTableBody.appendChild(row);
+                            });
+                        })
+                        .catch(error => console.error('Error fetching data:', error));
+                }
+            });
+        </script>
+
+
+
+        
+
+
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Feedback";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the Customer Dashboard</title>
+    <link rel="stylesheet" href="~/css/Feedback.css?v=1.0.0">
+
+</head>
+<body>
+
+
+    <div>
+        <center> <h2>Provide Feedback</h2> </center>
+        <form id="feedbackForm">
+            <input type="text" id="bookName" placeholder="Enter the book name">
+            <textarea id="feedbackText" rows="4" cols="50" placeholder="Enter your feedback"></textarea>
+            <br>
+            <button type="submit" class="btn btn-primary submit-feedback">Submit Feedback</button>
+            <p id="feedbackStatus"></p>
+        </form>
+    </div>
+
+
+
+
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var feedbackForm = document.getElementById("feedbackForm");
+
+            feedbackForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission behavior
+
+                var bookName = document.getElementById("bookName").value;
+                var feedbackText = document.getElementById("feedbackText").value;
+
+                // Send feedback to server
+                sendFeedback(bookName, feedbackText);
+            });
+
+            function sendFeedback(bookName, feedbackText) {
+                if (!feedbackText || !bookName) {
+                    // If either feedbackText or bookName is empty, display an error message
+                    document.getElementById("feedbackStatus").innerText = "Please enter both the book name and feedback.";
+                    document.getElementById("feedbackStatus").classList.remove("text-success");
+                    document.getElementById("feedbackStatus").classList.add("text-danger");
+                    return;
+                }
+
+                // Create an object with both feedbackText and bookName properties
+                var feedbackData = {
+                    feedbackText: feedbackText,
+                    bookName: bookName
+                };
+
+                fetch("/Customer/SubmitFeedback", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(feedbackData) // Pass the combined object here
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            // Feedback submitted successfully
+                            document.getElementById("feedbackStatus").innerText = "Feedback submitted successfully!";
+                            document.getElementById("feedbackStatus").classList.remove("text-danger");
+                            document.getElementById("feedbackStatus").classList.add("text-success");
+                            // Clear the feedback input
+                            document.getElementById("feedbackText").value = "";
+                            document.getElementById("bookName").value = ""; // Clear the book name input
+                        } else {
+                            // Failed to submit feedback
+                            document.getElementById("feedbackStatus").innerText = "Failed to submit feedback.";
+                            document.getElementById("feedbackStatus").classList.remove("text-success");
+                            document.getElementById("feedbackStatus").classList.add("text-danger");
+                        }
+                    })
+                    .catch(error => {
+                        // Error occurred
+                        console.error('Error submitting feedback:', error);
+                        document.getElementById("feedbackStatus").innerText = "An error occurred while submitting feedback.";
+                        document.getElementById("feedbackStatus").classList.remove("text-success");
+                        document.getElementById("feedbackStatus").classList.add("text-danger");
+                    });
+            }
+        });
+
+</script>
+</body>
+</html>

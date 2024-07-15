@@ -1,0 +1,98 @@
+﻿@model IEnumerable<BookStore.Models.Feedback>
+
+@{
+    ViewData["Title"] = "Manage Feedback";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Feedback</title>
+    <style>
+
+        /* Resetting default margin and padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Use a fallback font */
+        }
+
+        /* Style for the feedback container */
+        .feedback-container {
+            max-width: 800px;
+            margin: 20px auto; /* Add some space around the container */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        /* Style for the table */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            /* Style for table headers */
+            .table th {
+                background-color: #f2f2f2;
+                padding: 12px 10px; /* Add more padding vertically */
+                text-align: left;
+                border-bottom: 2px solid #dddddd; /* Add a bottom border */
+            }
+
+            /* Style for table cells */
+            .table td {
+                padding: 12px 10px;
+                border-bottom: 1px solid #dddddd;
+            }
+
+            /* Style for alternating rows */
+            .table tbody tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            /* Style for table rows on hover */
+            .table tbody tr:hover {
+                background-color: #f2f2f2;
+                transition: background-color 0.3s ease; /* Add a smooth transition */
+            }
+
+        /* Style for the heading */
+        .feedback-container h2 {
+            font-size: 28px; /* Increase font size */
+            margin-bottom: 20px;
+            color: #333333; /* Darken the text color */
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <h2>View Feedback</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Feedback</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var feedback in Model)
+                {
+                    <tr>
+                        <td>@feedback.BookName</td>
+                        <td>@feedback.FeedbackText</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

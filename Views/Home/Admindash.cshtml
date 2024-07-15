@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    
+   <link rel="stylesheet" href="~/css/addash.css?v=1.0.0">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to the Admin Dashboard</h1>
+
+        <!-- Manage Books Div -->
+        <div class="card">
+            <div class="card-content">
+                <h2 class="card-title">Manage Books Details</h2>
+                <p class="card-text">View, add, edit, and delete books in the system.</p>
+                <a href="@Url.Action("ManageBooks", "Admin")" class="btn">Go to Books</a>
+            </div>
+        </div>
+
+
+        <!-- Manage Customers Div -->
+        <div class="card">
+            <div class="card-content">
+                <h2 class="card-title">Manage Customers</h2>
+                <p class="card-text">Manage customer accounts and information.</p>
+                <a href="@Url.Action("ManageCustomers", "Admin")" class="btn">Go to Customers</a>
+            </div>
+        </div>
+
+
+        <!-- Manage Orders Div -->
+        <div class="card">
+            <div class="card-content">
+                <h2 class="card-title">Manage Orders</h2>
+                <p class="card-text">Track and manage customer orders and transactions.</p>
+                <a href="@Url.Action("ManageOrders", "Admin")" class="btn">Go to Orders</a>
+            </div>
+        </div>
+
+
+        <!-- Generate Reports Div -->
+        <div class="card">
+            <div class="card-content">
+                <h2 class="card-title">Generate Reports</h2>
+                <p class="card-text">Generate various reports and analytics for business insights.</p>
+                <a href="@Url.Action("GenerateReports", "Admin")" class="btn">Go to Reports</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

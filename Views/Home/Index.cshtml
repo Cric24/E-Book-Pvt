@@ -1,0 +1,414 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/Index.css?v=1.0.0">
+</head>
+
+
+<body>
+<div class="container">
+    <h1><center>Welcome to e-book pvt. Ltd </center> </h1>
+    <p>
+        e-book pvt. Ltd is a leading used books selling company in Sri Lanka. We offer a vast collection of Sri Lankan and foreign used books covering various disciplines to meet the diverse needs of our wide readership, ranging from little kids to higher academics.
+    </p>
+
+    <!-- Search Form -->
+    <div class="row mb-3">
+        <div class="col-md-6 offset-md-3">
+            <form id="searchForm">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for books..." id="searchInput">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Search Results Container -->
+    <div id="searchResultsContainer">
+        <!-- Search results will be loaded here -->
+    </div>
+
+
+        <!-- Featured Books Section -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <h2>Featured Books</h2>
+                <div class="row" id="featuredBooksContainer">
+                    <!-- Featured books will be loaded here -->
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/Odyssey.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title">The Odyssey</h5>
+                                <p class="card-text">Description of The Odyssey</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> Bernard Knox </p>
+                                    <p><strong>Price:</strong> 1250 </p>
+                                    <p><strong>Quantity:</strong> 11 </p>
+                                    <p><strong>Categories:</strong>  Poetry </p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/Hamlet.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Hamlet</h5>
+                                <p class="card-text">Description of Hamlet</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> William Shakespeare</p>
+                                    <p><strong>Price:</strong> 2800</p>
+                                    <p><strong>Quantity:</strong> 20</p>
+                                    <p><strong>Categories:</strong> Fiction</p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/The Iliad.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title">The Iliad</h5>
+                                <p class="card-text">Description of The Iliad</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> Emily Wilson </p>
+                                    <p><strong>Price:</strong> 2800</p>
+                                    <p><strong>Quantity:</strong> 20</p>
+                                    <p><strong>Categories:</strong> Fiction</p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- Latest Books Section -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <h2>Latest Books</h2>
+                <div class="row" id="featuredBooksContainer">
+                    <!-- Latest books will be loaded here -->
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/GOT.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Game of Thrones</h5>
+                                <p class="card-text">Description of Game of Thrones.</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> George R. R. Martin</p>
+                                    <p><strong>Price:</strong> 3500</p>
+                                    <p><strong>Quantity:</strong> 9</p>
+                                    <p><strong>Categories:</strong> Fiction</p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/HOTD.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title">A Song of Ice and Fire</h5>
+                                <p class="card-text">Description of A Song of Ice and Fire</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> George R. R. Martin</p>
+                                    <p><strong>Price:</strong> 1950</p>
+                                    <p><strong>Quantity:</strong> 9</p>
+                                    <p><strong>Categories:</strong> Fiction</p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/The Oresteia.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title">The Oresteia</h5>
+                                <p class="card-text">Description of The Oresteia</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> Robert Fagles</p>
+                                    <p><strong>Price:</strong> 1250</p>
+                                    <p><strong>Quantity:</strong> 9</p>
+                                    <p><strong>Categories:</strong> Literature </p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Horror Books Section -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <h2>Horror Books</h2>
+                <div class="row" id="featuredBooksContainer">
+                    <!-- Horror books will be loaded here -->
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/Poltergeist.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title"> Poltergeist </h5>
+                                <p class="card-text">Description of Poltergeist </p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> James Kahn </p>
+                                    <p><strong>Price:</strong> 4300 </p>
+                                    <p><strong>Quantity:</strong> 18 </p>
+                                    <p><strong>Categories:</strong>  Horror </p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/The Omen.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title">The Omen</h5>
+                                <p class="card-text">Description of The Omen</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> David Seltzer</p>
+                                    <p><strong>Price:</strong> 1800</p>
+                                    <p><strong>Quantity:</strong> 20</p>
+                                    <p><strong>Categories:</strong> Fiction</p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/The Amityville Horror.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title">The Amityville Horror</h5>
+                                <p class="card-text">Description of The Amityville Horror</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> Jay Anson </p>
+                                    <p><strong>Price:</strong> 3192 </p>
+                                    <p><strong>Quantity:</strong> 17 </p>
+                                    <p><strong>Categories:</strong>  Horror </p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/Ghost Station.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Ghost Station</h5>
+                                <p class="card-text">Description of Ghost Station</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> S.A. Barnes </p>
+                                    <p><strong>Price:</strong> 750 </p>
+                                    <p><strong>Quantity:</strong> 31</p>
+                                    <p><strong>Categories:</strong> Fiction</p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/The Howling.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title">The Howling</h5>
+                                <p class="card-text">Description of The Howling</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> Gary Brandner </p>
+                                    <p><strong>Price:</strong> 99 </p>
+                                    <p><strong>Quantity:</strong> 88</p>
+                                    <p><strong>Categories:</strong> Horror </p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="~/css/Frankentein.jpg" class="card-img-top" alt="Featured Book 1">
+                            <div class="card-body">
+                                <h5 class="card-title"> Frankenstein </h5>
+                                <p class="card-text">Description of Frankenstein</p>
+                                <div class="details" style="display: none;">
+                                    <p><strong>Author:</strong> Mary Wollstonecraft Shelley </p>
+                                    <p><strong>Price:</strong> 1600 </p>
+                                    <p><strong>Quantity:</strong> 15 </p>
+                                    <p><strong>Categories:</strong>  Horror </p>
+                                </div>
+                                <button class="btn btn-primary show-details-btn">Show Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h3>Customer</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>New Customer Registration: Register your details to start ordering books.</li>
+                        <li>Order Books: Browse our collection and place orders after logging in.</li>
+                        <li>Manage Orders: View and manage your orders.</li>
+                        <li>Search Books: Search for details of books in our collection.</li>
+                        <li>Provide Feedback: Share your feedback about our books.</li>
+                    </ul>
+                    <a class="btn btn-primary" href="@Url.Action("CustomerAuth", "Customer")" role="button">Register/Login</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h3>Admin</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Admin Login: Access admin functionalities.</li>
+                        <li>Manage Books: Add, edit, or delete book details.</li>
+                        <li>Manage Customers: View and manage customer information.</li>
+                        <li>Manage Orders: View and manage customer orders.</li>
+                        <li>Generate Reports: Generate reports for business analysis.</li>
+                    </ul>
+                   
+                    <a class="btn btn-primary" href="@Url.Action("AdminAuth", "Admin")" role="button">Admin Login</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var searchForm = document.getElementById("searchForm");
+
+        searchForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            var searchInput = document.getElementById("searchInput").value;
+
+            // Call function to search for books
+            searchBooks(searchInput);
+        });
+
+        function searchBooks(title) {
+            fetch(`/Customer/SearchBooks?title=${encodeURIComponent(title)}`)
+                .then(response => response.json())
+                .then(data => {
+                    var searchResultsContainer = document.getElementById("searchResultsContainer");
+                    searchResultsContainer.innerHTML = ""; // Clear existing content
+
+                    if (data.length === 0) {
+                        searchResultsContainer.innerHTML = "<p>No results found.</p>";
+                        return;
+                    }
+
+                    // Populate container with fetched data
+                    data.forEach(book => {
+                        var bookDiv = document.createElement("div");
+                        bookDiv.innerHTML = `
+                                    <p><strong>Title:</strong> ${book.title}</p>
+                                    <p><strong>Author:</strong> ${book.author}</p>
+                                    <p><strong>ISBN:</strong> ${book.isbn}</p>
+                                    <p><strong>Year:</strong> ${book.year}</p>
+                                    <p><strong>Price:</strong> ${book.price}</p>
+                                    <p><strong>Quantity:</strong> ${book.quantity}</p>
+                                    <p><strong>Description:</strong> ${book.description}</p>
+                                    <p><strong>Categories:</strong> ${book.categories}</p>
+                                    <hr>`;
+                        searchResultsContainer.appendChild(bookDiv);
+                    });
+
+                    // Clear the search input field
+                    document.getElementById("searchInput").value = "";
+
+                })
+                .catch(error => console.error('Error fetching search results:', error));
+        }
+
+
+
+            // Get all the "Show Details" buttons
+            var showDetailsButtons = document.querySelectorAll(".show-details-btn");
+
+            // Add click event listener to each button
+            showDetailsButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    // Find the details container within the current card body
+                    var detailsContainer = this.parentNode.querySelector(".details");
+
+                    // Toggle the visibility of the details container
+                    if (detailsContainer.style.display === "none") {
+                        detailsContainer.style.display = "block";
+                        this.textContent = "Hide Details";
+                    } else {
+                        detailsContainer.style.display = "none";
+                        this.textContent = "Show Details";
+                    }
+                });
+            });
+
+
+
+
+    });
+</script>
+
+</body>
+    
+</html>
